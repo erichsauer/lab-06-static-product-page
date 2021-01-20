@@ -4,6 +4,8 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: top;
+    padding: 0;
+    margin: 0;
 }
 
 .list-item {
@@ -14,21 +16,41 @@
     justify-content: center;
     align-items: top;
     text-align: center;
+    align-content: center;
+    vertical-align: top;
     margin: 20px;
+    padding: 0;
 }
 
 li p {
     text-align: center;
     margin: 0px;
-    margin: 5px;
 }
 
 li>img {
     height: 300px;
-
+    outline: white solid 2px;
+    outline-offset: -5px;
 }
 
 .item-price {
     width: 150px;
     padding: 10px;
+}
+
+.header-image {
+    width: 400px;
+    outline: white solid 2px;
+    outline-offset: -10px;
+}
+
+.page-title {
+    margin-top: -60px;
+    margin-bottom: 30px;
+    color: white;
+    font-weight:600;
+}
+
+.navigation {
+
 }

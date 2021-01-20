@@ -2,7 +2,7 @@ export const plants = [
     {
         id: 1,
         name: 'Crested Fluffel',
-        image: 'fluffel.jpg',
+        image: 'crested-fluffel.jpg',
         description: 'Very rare fruiting body with feather-like pollination whisps.',
         fragrant: true,
         safetyNotes: 'Sniff in moderation.',
@@ -53,5 +53,4 @@ export const plants = [
         safetyNotes: 'Absolutely no direct sunshine.',
         price: 10
     },
-
 ];

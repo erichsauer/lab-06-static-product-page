@@ -1,0 +1,51 @@
+td>img {
+    width: 100px;
+    outline: white solid 1px;
+    outline-offset: -2.5px;
+}
+
+th {
+    font-weight: bolder;
+}
+
+th:nth-child(1) {
+    width: 10%;
+}
+
+th:nth-child(2) {
+    width: 50%;
+}
+
+th:nth-child(3) {
+    width: 20%;
+}
+
+th:nth-child(4) {
+    width: 20%;
+}
+
+td:nth-child(4) {
+    width: 20%;
+    font-size: rem;
+}
+
+td {
+    vertical-align: middle;
+    text-align: center;
+    margin: 0;
+}
+
+.total-row {
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+section {
+    margin: 0;
+}
+
+button {
+    width: 150px;
+    padding: 10px;
+    margin: 20px;
+}

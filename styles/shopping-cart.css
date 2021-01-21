@@ -1,0 +1,68 @@
+td>img {
+    width: 100px;
+    outline: white solid 1px;
+    outline-offset: -2.5px;
+}
+
+th {
+    font-weight: bolder;
+}
+
+th:nth-child(1) {
+    width: 10%;
+}
+
+th:nth-child(2) {
+    width: 50%;
+}
+
+th:nth-child(3) {
+    width: 20%;
+}
+
+th:nth-child(4) {
+    width: 20%;
+}
+
+td:nth-child(4) {
+    width: 20%;
+    font-size: rem;
+}
+
+td {
+    vertical-align: middle;
+    text-align: center;
+    margin: 0;
+}
+
+#order-total {
+    font-size: 1.5rem;
+    font-weight: bolder;
+    text-align: right;
+    padding-right: 20px;
+}
+
+button {
+    height: 50px;
+    padding: 10px 20px 10px 20px;
+    font-size: 1.25rem;
+    background-color: silver;
+    border-radius: 25px;
+    border-color: lightgray;
+    border-width: 2px;
+    color: white;
+}
+
+.cart-header-row {
+    font-size: 1.5rem;
+}
+
+table {
+    width: 75%;
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+}
+
+.table-container {
+    padding-bottom: 50px;
+}

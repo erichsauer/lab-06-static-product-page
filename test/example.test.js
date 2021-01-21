@@ -2,10 +2,9 @@
 import { renderProduct } from '../items/render-product.js';
 import { findById, calcItemTotal } from '../utils.js';
 import { renderCartItem } from '../shopping-cart/render-cart-item.js';
-import { plants } from '../items/data.js';
 
 const test = QUnit.test;
-const plant =
+const plants = [
     {
         id: 1,
         name: 'Crested Fluffel',
@@ -14,7 +13,17 @@ const plant =
         fragrant: true,
         safetyNotes: 'Sniff in moderation.',
         price: 10
-    };
+    },
+    {
+        id: 2,
+        name: 'Cragged Fallpop',
+        image: 'cragged-fallpop.jpg',
+        description: 'Generally appear in woodland settings among forest duff.',
+        fragrant: false,
+        safetyNotes: 'Best to keep in the bell jar.',
+        price: 15
+    },
+];
 
 const shoppingCart = [
     {
@@ -38,7 +47,7 @@ test('tests renderProduct function; input is an inventory item and output should
     
     //Act 
     // Call the function you're testing and set the result to a const
-    const actual = renderProduct(plant);
+    const actual = renderProduct(plants[0]);
 
     //Expect
     // Make assertions about what is expected versus the actual result
@@ -78,11 +87,11 @@ test('tests calcItemTotal function; input is a cart array, a product array and a
 test('tests renderCartItem function; input is a cart item and output should be a rendered <tr>', (expect) => {
     //Arrange
     // Set up your arguments and expectations
-    const expected = `<tr><td><img src="../assets/images/crested-fluffel.jpg" alt="Fluted Yodel"></td><td>Fluted Yodel</td><td>3</td><td>€30</td></tr>`;
+    const expected = `<tr><td><img src="../assets/images/crested-fluffel.jpg" alt="Crested Fluffel"></td><td>Crested Fluffel</td><td>3</td><td>€30</td></tr>`;
     
     //Act 
     // Call the function you're testing and set the result to a const
-    const actual = renderCartItem(shoppingCart[0]);
+    const actual = renderCartItem(plants, shoppingCart, 1);
 
     //Expect
     // Make assertions about what is expected versus the actual result

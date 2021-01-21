@@ -1,1 +1,17 @@
 /* add home page styles here */
+.page-title {
+    font-size: 5rem;
+    line-height: 4.5rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    animation: color-change 5s infinite;
+  }
+  
+  @keyframes color-change {
+    0% { color: brown; }
+    20% { color: olive; }
+    40% { color: darkorange; }
+    60% { color: darkslateblue; }
+    80% { color: teal; }
+    100% { color: brown; }
+  }

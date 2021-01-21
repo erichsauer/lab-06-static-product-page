@@ -9,14 +9,10 @@
 }
 
 .list-item {
-    height: 600px;
     width: 225px;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: top;
     text-align: center;
-    align-content: center;
     vertical-align: top;
     margin: 20px;
     padding: 0;
@@ -24,7 +20,8 @@
 
 li p {
     text-align: center;
-    margin: 0px;
+    margin: 15px;
+    line-height: 1.25rem;
 }
 
 li>img {
@@ -34,25 +31,13 @@ li>img {
 }
 
 .item-price {
-    width: 150px;
+    width: 100px;
+    height: 50px;
     padding: 10px;
-}
-
-.header-image {
-    width: 400px;
-    outline: white solid 2px;
-    outline-offset: -10px;
-    position: relative;
-    z-index:-1;
-}
-
-.page-title {
-    margin-top: -60px;
-    margin-bottom: 30px;
+    font-size: 1.25rem;
+    background-color: silver;
+    border-radius: 25px;
+    border-color: lightgray;
+    border-width: 2px;
     color: white;
-    font-weight:600;
-}
-
-.navigation {
-
 }

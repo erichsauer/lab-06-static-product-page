@@ -10,6 +10,7 @@ let total = 0;
 
 for (const cartItem of shoppingCart) {
     let lineTotal = calcItemTotal(shoppingCart, plants, cartItem.id);
+    
     total += lineTotal;
 
     let tableRowDOM = renderCartItem(plants, shoppingCart, cartItem.id);

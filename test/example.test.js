@@ -1,7 +1,8 @@
 // IMPORT MODULES under test here:
 import { renderProduct } from '../items/render-product.js';
-import { findById } from '../shopping-cart/find-by-id.js';
+import { findById, calcItemTotal } from '../utils.js';
 import { renderCartItem } from '../shopping-cart/render-cart-item.js';
+import { plants } from '../items/data.js';
 
 const test = QUnit.test;
 const plant =
@@ -57,6 +58,21 @@ test('tests findById function; input is a cart item and an id and output should 
     //Expect
     // Make assertions about what is expected versus the actual result
     expect.deepEqual(actual, expected);
+});
+
+test('tests calcItemTotal function; input is a cart array, a product array and an id and output should be 30', (expect) => {
+    //Arrange
+    // Set up your arguments and expectations
+    const expected = 30;
+
+    
+    //Act 
+    // Call the function you're testing and set the result to a const
+    const actual = calcItemTotal(shoppingCart, plants, 1);
+
+    //Expect
+    // Make assertions about what is expected versus the actual result
+    expect.equal(actual, expected);
 });
 
 test('tests renderCartItem function; input is a cart item and output should be a rendered <tr>', (expect) => {

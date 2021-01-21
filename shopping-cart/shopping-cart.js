@@ -4,6 +4,7 @@ import { renderCartItem } from './render-cart-item.js';
 import { findById, calcItemTotal } from '../utils.js';
 
 const tableBody = document.querySelector('tbody');
+const orderTotalCell = document.getElementById('order-total');
 
 let total = 0;
 
@@ -18,4 +19,4 @@ for (const cartItem of shoppingCart) {
     tableBody.append(tableRowDOM);
 }
 
-console.log(total);
+orderTotalCell.textContent = `Order Total: €${total}`;

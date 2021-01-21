@@ -15,11 +15,18 @@ body {
     
     --header-height: 80px;
     --shadow: 0px 10px 20px -12px rgba(0,0,0,0.45);
-    --gutter: 30px;
+    --gutter: 10px;
     --footer-height: 25px;
     
     font-family: 'Titillium Web', sans-serif;
-    background-color: var(--color2);
+    background-color:#eeeeee;
+    background-image:
+    radial-gradient(circle at 100% 150%, #eeeeee 24%, white 24%, white 28%, #eeeeee 28%, #eeeeee 36%, white 36%, white 40%, transparent 40%, transparent),
+    radial-gradient(circle at 0    150%, #eeeeee 24%, white 24%, white 28%, #eeeeee 28%, #eeeeee 36%, white 36%, white 40%, transparent 40%, transparent),
+    radial-gradient(circle at 50%  100%, white 10%, #eeeeee 10%, #eeeeee 23%, white 23%, white 30%, #eeeeee 30%, #eeeeee 43%, white 43%, white 50%, #eeeeee 50%, #eeeeee 63%, white 63%, white 71%, transparent 71%, transparent),
+    radial-gradient(circle at 100% 50%, white 5%, #eeeeee 5%, #eeeeee 15%, white 15%, white 20%, #eeeeee 20%, #eeeeee 29%, white 29%, white 34%, #eeeeee 34%, #eeeeee 44%, white 44%, white 49%, transparent 49%, transparent),
+    radial-gradient(circle at 0    50%, white 5%, #eeeeee 5%, #eeeeee 15%, white 15%, white 20%, #eeeeee 20%, #eeeeee 29%, white 29%, white 34%, #eeeeee 34%, #eeeeee 44%, white 44%, white 49%, transparent 49%, transparent);
+    background-size: 100px 50px;
 }
 
 main {
@@ -99,8 +106,29 @@ footer {
     box-shadow: var(--shadow);
 }
   
-    .header-image {
-        width: 400px;
-        outline: white solid 2px;
-        outline-offset: -10px;
-    }    
+.header-image {
+    width: 400px;
+    outline: white solid 2px;
+    outline-offset: -10px;
+    position: relative;
+    z-index:-1;
+}
+
+.page-title {
+    font-family: 'Vast Shadow', cursive;
+    font-size: 2.5rem;
+    font-weight: normal;
+    text-align: center;
+    line-height: 2.25rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+a {
+    margin: 5px;
+}
+
+section {
+    margin: 0px;
+    padding: 0px;
+}

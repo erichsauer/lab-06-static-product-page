@@ -97,3 +97,17 @@ test('tests renderCartItem function; input is a cart item and output should be a
     // Make assertions about what is expected versus the actual result
     expect.equal(actual.outerHTML, expected);
 });
+
+test('tests calcCartTotal function; input is a cart array and output should be a total', (expect) => {
+    //Arrange
+    // Set up your arguments and expectations
+    const expected = `<tr><td><img src="../assets/images/crested-fluffel.jpg" alt="Crested Fluffel"></td><td>Crested Fluffel</td><td>3</td><td>€30</td></tr>`;
+    
+    //Act 
+    // Call the function you're testing and set the result to a const
+    const actual = renderCartItem(plants, shoppingCart, 1);
+
+    //Expect
+    // Make assertions about what is expected versus the actual result
+    expect.equal(actual.outerHTML, expected);
+});

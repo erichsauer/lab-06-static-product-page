@@ -2,6 +2,7 @@
 import { renderProduct } from '../items/render-product.js';
 import { findById, calcItemTotal, calcCartTotal } from '../utils.js';
 import { renderCartItem } from '../shopping-cart/render-cart-item.js';
+import { getCart, clearCart, setCart, addToCart } from '../shopping-cart/utils.js';
 
 const test = QUnit.test;
 const plants = [
@@ -35,7 +36,9 @@ const shoppingCart = [
         quantity: 2
     },
 ];
-    
+
+const emptyCart = [];
+
 test('tests renderProduct function; input is an inventory item and output should be a rendered <li>', (expect) => {
     //Arrange
     // Set up your arguments and expectations
@@ -44,7 +47,7 @@ test('tests renderProduct function; input is an inventory item and output should
     //Act 
     // Call the function you're testing and set the result to a const
     const actual = renderProduct(plants[0]);
-
+    
     //Expect
     // Make assertions about what is expected versus the actual result
     expect.equal(actual.outerHTML, expected);
@@ -54,12 +57,12 @@ test('tests findById function; input is a cart item and an id and output should 
     //Arrange
     // Set up your arguments and expectations
     const expected = shoppingCart[0];
-
+    
     
     //Act 
     // Call the function you're testing and set the result to a const
     const actual = findById(shoppingCart, 1);
-
+    
     //Expect
     // Make assertions about what is expected versus the actual result
     expect.deepEqual(actual, expected);
@@ -69,12 +72,12 @@ test('tests calcItemTotal function; input is a cart array, a product array and a
     //Arrange
     // Set up your arguments and expectations
     const expected = 30;
-
+    
     
     //Act 
     // Call the function you're testing and set the result to a const
     const actual = calcItemTotal(shoppingCart, plants, 1);
-
+    
     //Expect
     // Make assertions about what is expected versus the actual result
     expect.equal(actual, expected);
@@ -102,8 +105,56 @@ test('tests calcCartTotal function; input is a cart array and output should be a
     //Act 
     // Call the function you're testing and set the result to a const
     const actual = calcCartTotal(shoppingCart, plants);
-
+    
     //Expect
     // Make assertions about what is expected versus the actual result
     expect.equal(actual, expected);
 });
+
+test('tests getCart function; output should be a cart array pulled from localStorage', (expect) => {
+    //Arrange
+    // Set up your arguments and expectations
+    const stringyShoppingCart = JSON.stringify(shoppingCart);
+    localStorage.setItem('CART', stringyShoppingCart);
+
+    const expected = shoppingCart;
+    
+    //Act 
+    // Call the function you're testing and set the result to a const
+    const actual = getCart();
+    
+    //Expect
+    // Make assertions about what is expected versus the actual result
+    expect.deepEqual(actual, expected);
+});
+
+test('tests clearCart function; should set localStorage to stringy default cart', (expect) => {
+    //Arrange
+    // Set up your arguments and expectations
+    const stringyShoppingCart = JSON.stringify(shoppingCart);
+    localStorage.setItem('CART', stringyShoppingCart);
+    const expected = '[]';
+    clearCart();
+    //Act 
+    // Call the function you're testing and set the result to a const
+    const actual = localStorage.getItem('CART');
+    //Expect
+    // Make assertions about what is expected versus the actual result
+    expect.deepEqual(actual, expected);
+});
+
+test('tests setCart function; should set an array to localStorage', (expect) => {
+    //Arrange
+    // Set up your arguments and expectations
+    const stringyShoppingCart = JSON.stringify(shoppingCart);
+    localStorage.setItem('CART', '');
+    const expected = stringyShoppingCart;
+    setCart(shoppingCart);
+    //Act 
+    // Call the function you're testing and set the result to a const
+    const actual = localStorage.getItem('CART');
+    //Expect
+    // Make assertions about what is expected versus the actual result
+    expect.deepEqual(actual, expected);
+});
+

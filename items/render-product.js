@@ -1,3 +1,5 @@
+import { addToCart, getCart } from '../shopping-cart/utils.js';
+
 export function renderProduct(plant) {
     const item = document.createElement('li');
     const itemID = document.createElement('p');
@@ -22,6 +24,10 @@ export function renderProduct(plant) {
     itemImage.src = `../assets/images/${plant.image}`;
     itemImage.alt = `${plant.name} flower`;
     itemDescription.textContent = plant.description;
+    itemPriceButton.addEventListener('click', () => {
+        getCart();
+        addToCart(plant.id);
+    });
     
     if (plant.fragrant === true) {
         itemFragrant.textContent = `Fragrant? Yes.`;

@@ -27,7 +27,7 @@ li p {
 li>img {
     height: 300px;
     outline: white solid 2px;
-    outline-offset: -5px;
+    outline-offset: -7px;
 }
 
 .item-price {

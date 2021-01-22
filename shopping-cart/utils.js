@@ -63,3 +63,14 @@ export function addToCart(id) {
     // set array to localStorage!
     setCart(shoppingCart);
 }
+
+export function countCartItems() {
+    const shoppingCart = getCart();
+    let quantityInCart = 0;
+
+    for (let item of shoppingCart) {
+        item = findById(shoppingCart, item.id);
+        quantityInCart += item.quantity;
+    }
+    return quantityInCart;
+}

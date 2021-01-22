@@ -2,7 +2,7 @@
 import { renderProduct } from '../items/render-product.js';
 import { findById, calcItemTotal, calcCartTotal } from '../utils.js';
 import { renderCartItem } from '../shopping-cart/render-cart-item.js';
-import { getCart, clearCart, setCart, addToCart } from '../shopping-cart/utils.js';
+import { getCart, clearCart, setCart } from '../shopping-cart/utils.js';
 
 const test = QUnit.test;
 const plants = [
@@ -36,8 +36,6 @@ const shoppingCart = [
         quantity: 2
     },
 ];
-
-const emptyCart = [];
 
 test('tests renderProduct function; input is an inventory item and output should be a rendered <li>', (expect) => {
     //Arrange
@@ -157,4 +155,3 @@ test('tests setCart function; should set an array to localStorage', (expect) => 
     // Make assertions about what is expected versus the actual result
     expect.deepEqual(actual, expected);
 });
-

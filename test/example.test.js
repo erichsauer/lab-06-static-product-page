@@ -1,6 +1,6 @@
 // IMPORT MODULES under test here:
 import { renderProduct } from '../items/render-product.js';
-import { findById, calcItemTotal } from '../utils.js';
+import { findById, calcItemTotal, calcCartTotal } from '../utils.js';
 import { renderCartItem } from '../shopping-cart/render-cart-item.js';
 
 const test = QUnit.test;
@@ -33,10 +33,6 @@ const shoppingCart = [
     {
         id: 2,
         quantity: 2
-    },
-    {
-        id: 3,
-        quantity: 1
     },
 ];
     
@@ -101,13 +97,13 @@ test('tests renderCartItem function; input is a cart item and output should be a
 test('tests calcCartTotal function; input is a cart array and output should be a total', (expect) => {
     //Arrange
     // Set up your arguments and expectations
-    const expected = `<tr><td><img src="../assets/images/crested-fluffel.jpg" alt="Crested Fluffel"></td><td>Crested Fluffel</td><td>3</td><td>€30</td></tr>`;
+    const expected = 60;
     
     //Act 
     // Call the function you're testing and set the result to a const
-    const actual = renderCartItem(plants, shoppingCart, 1);
+    const actual = calcCartTotal(shoppingCart, plants);
 
     //Expect
     // Make assertions about what is expected versus the actual result
-    expect.equal(actual.outerHTML, expected);
+    expect.equal(actual, expected);
 });

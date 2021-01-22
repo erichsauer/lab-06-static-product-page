@@ -5,11 +5,15 @@ import { renderCartItem } from './render-cart-item.js';
 
 const tableBody = document.querySelector('tbody');
 
-calcCartTotal(shoppingCart, plants);
-
 for (const cartItem of shoppingCart) {
-
+    
     let tableRowDOM = renderCartItem(plants, shoppingCart, cartItem.id);
-
+    
     tableBody.append(tableRowDOM);
 }
+
+const orderTotalCell = document.getElementById('order-total');
+
+let total = calcCartTotal(shoppingCart, plants);
+
+orderTotalCell.textContent = `Order Total: €${total}`;

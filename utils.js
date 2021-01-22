@@ -8,13 +8,11 @@ export function findById(array, id) {
 export function calcItemTotal(cartArray, inventoryArray, id) {
     const itemQuantity = findById(cartArray, id);
     const itemPrice = findById(inventoryArray, id);
-
+    
     return itemQuantity.quantity * itemPrice.price;
 }
 
 export function calcCartTotal(shoppingCart, plants) {
-    const orderTotalCell = document.getElementById('order-total');
-
     let total = 0;
 
     for (const cartItem of shoppingCart) {
@@ -22,5 +20,5 @@ export function calcCartTotal(shoppingCart, plants) {
         
         total += lineTotal;
     }
-    orderTotalCell.textContent = `Order Total: €${total}`;
+    return total;
 }

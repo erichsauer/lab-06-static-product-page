@@ -1,11 +1,14 @@
 import { plants } from '../items/data.js';
 import { calcCartTotal } from '../utils.js';
-// import { shoppingCart } from './data.js';
 import { renderCartItem } from './render-cart-item.js';
-import { getCart } from './utils.js';
+import { clearCart, getCart } from './utils.js';
 
 const shoppingCart = getCart();
 const tableBody = document.querySelector('tbody');
+const orderButton = document.getElementById('place-order');
+const tableHeader = document.querySelector('thead');
+const tableFooter = document.querySelector('tfoot');
+const orderTotalCell = document.getElementById('order-total');
 
 for (const cartItem of shoppingCart) {
     
@@ -14,8 +17,17 @@ for (const cartItem of shoppingCart) {
     tableBody.append(tableRowDOM);
 }
 
-const orderTotalCell = document.getElementById('order-total');
-
 let total = calcCartTotal(shoppingCart, plants);
 
 orderTotalCell.textContent = `Order Total: €${total}`;
+
+orderButton.addEventListener('click', () => {
+    alert(JSON.stringify(shoppingCart, true, 2));
+    clearCart();
+});
+
+if (!total) {
+    tableHeader.style.display = 'none';
+    tableFooter.style.display = 'none';
+    orderButton.style.display = 'none';
+}

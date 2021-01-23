@@ -1,5 +1,14 @@
 import { addToCart, countCartItems, getCart } from '../shopping-cart/utils.js';
 
+const itemsInCart = document.getElementById('items-in-cart');
+
+if (countCartItems() === 0) {
+    itemsInCart.style.display = 'none'; 
+} else {
+    itemsInCart.textContent = `(${countCartItems()})`;
+}
+
+console.log(countCartItems());
 export function renderProduct(plant) {
     const item = document.createElement('li');
     const itemID = document.createElement('p');
@@ -28,14 +37,15 @@ export function renderProduct(plant) {
     itemImage.alt = `${plant.name} flower`;
     itemDescription.textContent = plant.description;
     itemQuantity.type = 'number';
-    itemQuantity.placeholder = 'order quantity';
     itemQuantity.value = 1;
+    itemQuantity.min = 0;
 
     // add to cart button 
     itemPriceButton.addEventListener('click', () => {
         getCart();
         addToCart(plant.id, itemQuantity.valueAsNumber);
         itemQuantity.value = 1;
+        itemsInCart.style.display = 'inline';
         itemsInCart.textContent = `(${countCartItems()})`;
     });
     

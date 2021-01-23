@@ -31,6 +31,7 @@ li>img {
 }
 
 .item-price {
+    display: inline;
     width: 100px;
     height: 50px;
     padding: 10px;
@@ -50,4 +51,16 @@ li>img {
     font-size: 1.5rem;
     font-weight: bolder;
     margin-bottom: 10px;
+}
+
+.item-quantity {
+    flex: 1;
+    width: 50px;
+    margin: 10px;
+    height: 50px;
+    text-align: center;
+    font-size: 1.5rem;
+    border: solid lightgray 3px;
+    color: darkslategray;
+    border-radius: 10px;
 }

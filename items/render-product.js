@@ -1,3 +1,5 @@
+import { addToCart, countCartItems, getCart } from '../shopping-cart/utils.js';
+
 export function renderProduct(plant) {
     const item = document.createElement('li');
     const itemID = document.createElement('p');
@@ -7,6 +9,7 @@ export function renderProduct(plant) {
     const itemFragrant = document.createElement('p');
     const itemSafety = document.createElement('p');
     const itemPriceButton = document.createElement('button');
+    const itemsInCart = document.getElementById('items-in-cart');
 
     item.classList.add('list-item');
     itemID.classList.add('item-id');
@@ -22,6 +25,12 @@ export function renderProduct(plant) {
     itemImage.src = `../assets/images/${plant.image}`;
     itemImage.alt = `${plant.name} flower`;
     itemDescription.textContent = plant.description;
+
+    itemPriceButton.addEventListener('click', () => {
+        getCart();
+        addToCart(plant.id);
+        itemsInCart.textContent = `(${countCartItems()})`;
+    });
     
     if (plant.fragrant === true) {
         itemFragrant.textContent = `Fragrant? Yes.`;

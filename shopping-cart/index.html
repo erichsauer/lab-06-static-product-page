@@ -31,28 +31,31 @@
         </section>
         <section class="table-container">
             <table>
-                <tr class="cart-header-row">
-                    <th></th>
-                    <th>Item</th>
-                    <th>Quantity</th>
-                    <th>Price</th>
-                </tr>
+                <thead>
+                    <tr class="cart-header-row">
+                        <th></th>
+                        <th>Item</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                    </tr>    
+                </thead>
                 <tbody>
                 </tbody>
-                <tr class="total-row">
-                    <td></td>
-                    <td colspan="3" id="order-total"></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-              </table>
-              <button>Place Order</button>
+                <tfoot>
+                    <tr class="total-row">
+                        <td></td>
+                        <td colspan="3" id="order-total"></td>
+                        <td></td>
+                        <td></td>
+                    </tr>    
+                </tfoot>
+            </table>
+                <a href="../"><button id="place-order">Place Order</button></a>
             </section>
     </main>
     <footer>
         <div class="copy gutter-right">&copy; 2020 Alchemy Code Lab</div>
     </footer>
-
     <script type="module" src="./shopping-cart.js"></script>
 </body>
 

@@ -27,7 +27,7 @@ li p {
 li>img {
     height: 300px;
     outline: white solid 2px;
-    outline-offset: -5px;
+    outline-offset: -7px;
 }
 
 .item-price {
@@ -40,4 +40,14 @@ li>img {
     border-color: lightgray;
     border-width: 2px;
     color: white;
+}
+
+.item-id {
+    display: none;
+}
+
+.item-name {
+    font-size: 1.5rem;
+    font-weight: bolder;
+    margin-bottom: 10px;
 }

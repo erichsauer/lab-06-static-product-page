@@ -46,7 +46,7 @@ export const plants = [
     },
     {
         id: 6,
-        name: 'Yuzie (Very Rare Form)',
+        name: 'Yuzie (Rare Form)',
         image: 'yuzie-pollination-form.jpg',
         description: 'Note the squiggle tips used to attract a pollination partner.',
         fragrant: false,

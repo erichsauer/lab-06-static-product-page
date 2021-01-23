@@ -40,7 +40,7 @@ const shoppingCart = [
 test('tests renderProduct function; input is an inventory item and output should be a rendered <li>', (expect) => {
     //Arrange
     // Set up your arguments and expectations
-    const expected = `<li class="list-item"><p class="item-id">ID: 1</p><h3 class="item-name">Crested Fluffel</h3><img class="item-image" src="../assets/images/crested-fluffel.jpg" alt="Crested Fluffel flower"><p class="item-description">Very rare fruiting body with feather-like pollination whisps.</p><p class="item-fragrant">Fragrant? Yes.</p><p class="item-safety">Safety notes: Sniff in moderation.</p><button class="item-price" value="1">€10</button></li>`;
+    const expected = `<li class=\"list-item\"><p class=\"item-id\">ID: 1</p><h3 class=\"item-name\">Crested Fluffel</h3><img class=\"item-image\" src=\"../assets/images/crested-fluffel.jpg\" alt=\"Crested Fluffel flower\"><p class=\"item-description\">Very rare fruiting body with feather-like pollination whisps.</p><p class=\"item-fragrant\">Fragrant? Yes.</p><p class=\"item-safety\">Safety notes: Sniff in moderation.</p><input class=\"item-quantity\" type=\"number\" placeholder=\"order quantity\"><button class=\"item-price\" value=\"1\">€10</button></li>`;
     
     //Act 
     // Call the function you're testing and set the result to a const

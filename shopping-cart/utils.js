@@ -38,23 +38,24 @@ export function setCart(shoppingCart) {
     localStorage.setItem(CART, stringyShoppingCart);
 }
 
-export function addToCart(id) {
+export function addToCart(id, qty) {
     // pulls cart from localStorage
     const shoppingCart = getCart();
     const item = findById(shoppingCart, id);
 
+    let orderQuantity = qty;
     // if item already exists in array, 
     if (item) {
 
     // increment item quantity
-        item.quantity++;
+        item.quantity += orderQuantity;
 
     } else {
 
     // pushes item into array and
         const newItem = {
             id: id,
-            quantity: 1
+            quantity: qty
         };
         
         shoppingCart.push(newItem);

@@ -85,8 +85,6 @@ header img {
     height: var(--header-height);
 }
 
-
-
 content {
     width: 80%;
 }
@@ -120,7 +118,7 @@ footer {
     font-size: 2.5rem;
     font-weight: normal;
     text-align: center;
-    line-height: 2.25rem;
+    line-height: 2.5rem;
     margin-top: 10px;
     margin-bottom: 10px;
 }

@@ -6,41 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./common/reset.css">
-    <link rel="stylesheet" href="./common/main.css">
-    <link rel="stylesheet" href="./styles/home.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="../common/reset.css">
+    <link rel="stylesheet" href="../common/main.css">
+    <link rel="stylesheet" href="../styles/items.css">
     <link href="https://fonts.googleapis.com/css2?family=Vast+Shadow&display=swap" rel="stylesheet">
-    <title>Plant Shop</title>
+    <title>Administrative Tools</title>
 </head>
 
 <body>
     <header>
         <div class="gutter-right logo">
-            <img src="assets/big-logo.png"/>
+            <img src="../assets/big-logo.png"/>
         </div>
     </header>
     <main>
         <section class="main-section">
-            <img class="header-image" src="assets/images/main-header.jpg"/>
+            <img class="header-image" src="../assets/images/admin-header.jpg"/>
             <h2 class="page-title">
-                Flower<br>Shop
+                Administrative<br>Tools
             </h2>
-            <nav>
-                <a class="link" href="./items/">Available Items</a>
-                <a href="../admin/">Administrative Tools</a>
+            <nav class="navigation">
+                <a href="../">Home</a>
+                <a id="cart-link" href="../items/">View Items <span id="items-in-cart"></span></a>
             </nav>
-            <content>
-
-            </content>
         </section>
+        <section></section>
     </main>
     <footer>
         <div class="copy gutter-right">&copy; 2020 Alchemy Code Lab</div>
     </footer>
 
-    <script type="module" src="app.js"></script>
+    <script type="module" src="./admin.js"></script>
 </body>
 
 </html>
